@@ -1,6 +1,6 @@
 <?php 
 
-namespace Scpigo\Core\Providers;
+namespace Scpigo\LaravelCore\Providers;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider { 
     public function boot() { 
