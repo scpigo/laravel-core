@@ -1,14 +1,14 @@
 {
-    "name": "scpigo/core",
+    "name": "scpigo/laravel-core",
     "description": "Core package",
     "type": "library",
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "7.4",
         "laravel/framework": "^8.0"
     },
     "autoload": {
         "psr-4": {
-            "Scpigo\\Core\\": "src/"
+            "Scpigo\\LaravelCore\\": "src/"
         }
     },
     "authors": [

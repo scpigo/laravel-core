@@ -1,13 +1,13 @@
 <?php
 
-namespace Scpigo\Core\Factory;
+namespace Scpigo\LaravelCore\Factory;
 
 class DtoFactory {
     public static function createArray(array $items, string $class): array {
         $array = [];
 
         foreach ($items as $key => $item) {
-            $dto = DtoFactory::createObject($item, $class);
+            $dto = DtoFactory::dtoOfArray($item, $class);
 
             $array[$key] = $dto;
         }
@@ -19,7 +19,10 @@ class DtoFactory {
         $dto = app()->make($class);
 
         foreach ($items as $key => $value) {
-            $dto->$key = $value;
+            if (property_exists($dto, $key)) {
+                $dto->$key = $value;
+            }
+            else return false;
         }
 
         return $dto;
